@@ -1,0 +1,33 @@
+/* using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class GameManager : MonoBehaviour
+{
+    public Button StartButton;
+    public Button DealButton;
+    public Button StandButton;
+    void Start()
+    {
+        StartButton.onClick.AddListener(() => StartClicked());
+        DealButton.onClick.AddListener(() => DealClicked());
+        StandButton.onClick.AddListener(() => StandClicked());
+    }
+
+    private void StartClicked()
+    {
+        throw new NotImplementedException()();
+    }
+
+    private void DealClicked()
+    {
+        throw new NotImplementedException()();
+    }
+
+    private void StandClicked()
+    {
+        throw new NotImplementedException()();           
+    }
+}
+*/
