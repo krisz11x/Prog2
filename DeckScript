@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 public class DeckScript : MonoBehaviour
@@ -10,7 +11,7 @@ public class DeckScript : MonoBehaviour
 
     void Start()
     {
-        
+        GetCardValues();
     }
 
 
@@ -25,9 +26,8 @@ public class DeckScript : MonoBehaviour
             {
                 num= 10;
             }
-            cardValues[1] = num++;
+            cardValues[i] = num++;
         }
-        currentIndex = 1;
     }
 
     public void Shuffle()
@@ -43,12 +43,14 @@ public class DeckScript : MonoBehaviour
             cardValues[i] = cardValues[j];
             cardValues[j] = value;
         }
+            currentIndex = 1;
     }
 
     public int DealCard(CardScript cardScript)
     {
         cardScript.SetSprite(cardSprites[currentIndex]);
-        cardScript.SetValue(cardValues[currentIndex++]);
+        cardScript.SetValue(cardValues[currentIndex]);
+        currentIndex++;
         return cardScript.GetValueOfCard();
     }
 
