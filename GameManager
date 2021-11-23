@@ -30,14 +30,31 @@ public class GameManager : MonoBehaviour
     }
 }
 
-   /* private void DealClicked()
+    private void DealClicked()
     {
-        throw new NotImplementedException()();
+         if (playerScript.cardIndex <= 8)
+        {
+            playerScript.GetCard();
+            scoreText.text = "Hand: " + playerScript.handValue.ToString();
+            if (playerScript.handValue > 20) RoundOver();
+        }
     }
-
+    
     private void StandClicked()
     {
-        throw new NotImplementedException()();           
+        HitDealer();          
     }
+
+
+     private void HitDealer()
+    {
+        while (dealerScript.handValue < 17 && dealerScript.cardIndex < 8)
+        {
+            dealerScript.GetCard();
+            dealerScoreText.text = "Hand: " + dealerScript.handValue.ToString();
+        }
+
+        RoundOver();
+    }
+
 }
-*/
